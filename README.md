@@ -12,4 +12,4 @@ I collected my better projects to this portfolio site, to make it easier to find
 
 ## Live Version
 
-https://takacsnorbee.github.io//
+https://takacsnorbee.github.io/newPortfolio/

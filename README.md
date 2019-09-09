@@ -1,6 +1,6 @@
 ## Slideshow
 
-I collected my better projects to this portfolio site, to make it easier to find the more usefull projects.
+I collected my better projects to this portfolio site, to make it easier to find the most usefull projects.
 
 ## Built With
 

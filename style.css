@@ -203,9 +203,9 @@ hr {
 .portfolio-box div {
 	border: 1px solid black;
 	margin-bottom: 20px;
-	padding-bottom: 10px;
 	box-shadow: 20px 20px 50px black;
 	transform: rotateX(40deg) rotateZ(15deg) rotateY(0deg);
+	height: 400px;
 }
 
 .portfolio-box p {
@@ -216,16 +216,25 @@ hr {
 	font-family: 'Trade Winds', cursive;
 }
 
+.portfolio-box a {
+	display: block;
+	height: 80%;
+	padding-top: 20px;
+}
+
 .portfolio-box img{
 	width: 100%;
-	margin-top: 20px;
+	height: 100%;
 }
 
 .portfolio-box figcaption {
 	font-size: 1.2rem;
-	margin-top: 10px;
 	font-family: var(--mainFont);
 	letter-spacing: 2px;
+	height: 20%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #a-clock img {
@@ -331,6 +340,8 @@ hr {
 		transform: rotateX(-30deg) rotateZ(0deg) rotateY(50deg);
 		box-shadow: -20px -20px 50px black;
 		margin: auto 5px;
+		margin-bottom: 100px;
+		height: 150px;
 	}
 	.portfolio-box div:hover {
 		transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg);

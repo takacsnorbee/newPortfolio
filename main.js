@@ -19,7 +19,7 @@ $(document).ready(function() {
 		{
 			sectionName: 'vue-box',
 			elementName: 'dog-fight',
-			demoURL: 'https://takacsnorbee.github.io/dogFight',
+			demoURL: 'https://github.com/takacsnorbee/dogFight',
 			imgSrc: 'pic/dogFight.png',
 			figcaptionText: 'Dog Fight'
 		},
@@ -176,6 +176,34 @@ $(document).ready(function() {
 			demoURL: 'https://github.com/takacsnorbee/fingerprint/',
 			imgSrc: 'pic/fingerprint-scanner.png',
 			figcaptionText: 'Fingerprint Scanner'
+		},
+		{
+			sectionName: 'js-box',
+			elementName: 'click_signal',
+			demoURL: 'https://github.com/takacsnorbee/click_signal/',
+			imgSrc: 'pic/click_signal.png',
+			figcaptionText: 'Click Signal'
+		},
+		{
+			sectionName: 'js-box',
+			elementName: 'snake-border',
+			demoURL: 'https://github.com/takacsnorbee/snake_border/',
+			imgSrc: 'pic/snake_border.png',
+			figcaptionText: 'Snake Border'
+		},
+		{
+			sectionName: 'js-box',
+			elementName: 'toggle_button_v1',
+			demoURL: 'https://github.com/takacsnorbee/toggle_button_v1/',
+			imgSrc: 'pic/toggle_button_v1.png',
+			figcaptionText: 'Toggle Button V1'
+		},
+		{
+			sectionName: 'js-box',
+			elementName: 'toggle_button_v2',
+			demoURL: 'https://github.com/takacsnorbee/toggle_button_v1/',
+			imgSrc: 'pic/toggle_button_v2.png',
+			figcaptionText: 'Toggle Button V2'
 		},
 	];
 

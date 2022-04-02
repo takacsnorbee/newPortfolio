@@ -201,11 +201,18 @@ hr {
 }
 
 .portfolio-box div {
+	background-color: white;
+	backface-visibility: hidden;
 	border: 1px solid black;
 	margin-bottom: 20px;
 	box-shadow: 20px 20px 50px black;
 	transform: rotateX(40deg) rotateZ(15deg) rotateY(0deg);
 	height: 400px;
+	transition: 0.5s;
+}
+
+.portfolio-box div a {
+	text-decoration: none;
 }
 
 .portfolio-box p {
@@ -230,6 +237,7 @@ hr {
 .portfolio-box figcaption {
 	font-size: 1.2rem;
 	font-family: var(--mainFont);
+	color: black;
 	letter-spacing: 2px;
 	height: 20%;
 	display: flex;
@@ -350,6 +358,9 @@ hr {
 	.portfolio-box p {
 		margin: 100px auto;
 	}
+	.portfolio-box figcaption {
+		font-size: 1rem;
+	}
 }
 
 @media (min-width : 1460px) {
@@ -366,4 +377,8 @@ hr {
 	#footer {
 		margin-top: 100px;
 	}
+	.portfolio-box figcaption {
+		font-size: 1.2rem;
+	}
 }
+

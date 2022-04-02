@@ -70,8 +70,8 @@ function buildElements(PROJECTSDATA) {
 		figcaption.textContent = e.figcaptionText;
 
 		a.appendChild(img);
+		a.appendChild(figcaption);
 		div.appendChild(a);
-		div.appendChild(figcaption);
 		
 		switch (e.sectionName) {
 			case 'chrome-box':

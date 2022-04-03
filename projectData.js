@@ -38,13 +38,6 @@ const PROJECTSDATA = [
     },
     {
         sectionName: 'cb-box',
-        elementName: 'profil-cb',
-        demoURL: 'https://github.com/takacsnorbee/profile',
-        imgSrc: 'pic/portfolio-cb.png',
-        figcaptionText: 'Profile'
-    },
-    {
-        sectionName: 'cb-box',
         elementName: 'color-clock',
         demoURL: 'https://github.com/takacsnorbee/colorclock',
         imgSrc: 'pic/colorclock.png',

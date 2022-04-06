@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('checkbox.css');
+
 :root {
 	--mainFont: 'ZCOOL QingKe HuangYou', cursive;
 }
@@ -8,6 +11,7 @@
 
 html {
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -15,9 +19,61 @@ body {
 	width: 100vw;
 }
 
+.vertical-span {
+	writing-mode: vertical-lr;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: white;
+	font-family: var(--mainFont);
+	letter-spacing: 2px;
+	animation: bounce-span 1s ease-in-out infinite;
+	background-color: rgba(0, 0, 0, .7);
+	padding: 10px 2px 5px 2px;
+	border-radius: 3px;
+}
+
+/*SETTINGS*/
+
+.settings {
+	position: fixed;
+	z-index: 20;
+	left: 5vw;
+	bottom: -110px;
+	font-family: var(--mainFont);
+	background-color: rgba(0, 0, 0, .7);
+	color: white;
+	padding: 10px 15px;
+	border-radius: 5px 5px 0 0;
+	letter-spacing: 2px;
+	height: 150px;
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+.settings hr {
+	margin: 5px 0;
+	width: 100%;
+}
+
+.settings-text {
+	width: 100%;
+	text-align: center;
+}
+
+.open-settings {
+	bottom: 0;
+}
+
 /*WELCOME*/
 
 #welcome-background {
+	position: relative;
 	height: 100vh;
 	width: 100%;
 	background-image: url(static/lujiazui_china.jpg);
@@ -46,20 +102,20 @@ body {
 	font-family: 'Trade Winds', cursive;
 }
 
-button {
+.welcome-down-btn {
 	position: absolute;
 	top: 90%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: 200px;
-	height: 50px;
-	width: 50px;
+	height: 100px;
+	width: 100px;
 	outline: none;
 	background-color: rgba(0, 0, 0, .7);
 	cursor: pointer;
 }
 
-button i {
+.welcome-down-btn i {
 	font-size: 2rem;
 	color: white;
 }
@@ -85,7 +141,7 @@ button i {
 
 /*NAV*/
 
-#nav, #about-me-wrapper ul, #footer {
+#about-me-wrapper ul, footer {
 	height: 30px;
 	display: flex;
 	flex-direction: row;
@@ -93,27 +149,107 @@ button i {
 	font-family: var(--mainFont);
 }
 
-#nav {
-	background-color: rgba(0,0,0, .7);
-	height: 40px;
-	position: sticky;
-	top: 0;
-	z-index: 10;
-}
 
-#nav a {
-	font-size: .9rem;
+.nav a {
 	text-decoration: none;
 	letter-spacing: 1px;
 	color: white;
-	padding-top: 13px;
 }
 
-#nav a:hover {
+.nav a:hover {
 	color: red;
 }
 
+#hambi-menu {
+	position: relative;
+	width: 60px;
+	height: 45px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+}
+
+#hambi-menu span {
+	display: block;
+	position: absolute;
+	height: 4px;
+	width: 100%;
+	background: black;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+#hambi-menu span:nth-child(1) {
+	top: 0px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+#hambi-menu span:nth-child(2) {
+	top: 18px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+#hambi-menu span:nth-child(3) {
+	top: 36px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+#hambi-menu.open span:nth-child(1) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+
+#hambi-menu.open span:nth-child(2) {
+	width: 0%;
+	opacity: 0;
+}
+
+#hambi-menu.open span:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 39px;
+	left: 8px;
+}
+
+time {
+	font-size: 1.8rem;
+}
+
 /*ABOUT ME*/
+
+.slide-in-left {
+	animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
 #about-me {
 	width: 100%;
@@ -122,6 +258,7 @@ button i {
 	background-size: cover;
 	background-attachment: fixed;
 	padding: 30px;
+	position: relative;
 }
 
 #about-me-wrapper {
@@ -200,6 +337,23 @@ hr {
 	margin: 0 auto;
 }
 
+.portfolio-box p::before, 
+.portfolio-box p::after {
+	font-family: 'La Belle Aurore', cursive;
+	position: absolute;
+	left: -30px;
+}
+
+.portfolio-box p::before {
+	content: '<p>';
+	top: -30px
+}
+
+.portfolio-box p::after {
+	content: '</p>';
+	bottom: -40px;
+}
+
 .portfolio-box div {
 	background-color: white;
 	backface-visibility: hidden;
@@ -216,11 +370,13 @@ hr {
 }
 
 .portfolio-box p {
+	position: relative;
 	margin: 30px 5px;
 	font-size: 1.7rem;
 	text-align: left;
 	text-decoration: underline;
-	font-family: 'Trade Winds', cursive;
+	font-family: var(--mainFont);
+	letter-spacing: px;
 }
 
 .portfolio-box a {
@@ -251,8 +407,27 @@ hr {
 
 /*FOOTER*/
 
-#footer {
-	margin-top: 50px;
+footer {
+	margin-top: 100px;
+	position: relative;
+}
+
+.up-btn {
+	position: absolute;
+	top: -100px;
+	right: 10vw;
+	border-radius: 200px;
+    height: 50px;
+    width: 50px;
+    outline: none;
+    background-color: rgba(0, 0, 0, .7);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+	font-size: 1.5rem;
 }
 
 /*KEYFRAMES*/
@@ -282,11 +457,48 @@ hr {
   }
 }
 
+@keyframes bounce-span {
+	0%,100% {
+		bottom: 10px;
+	}
+	50% {
+		bottom: 20px;
+	}
+}
+
+@keyframes slide-in-left {
+	0% {
+	  transform: translateX(-1000px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+}
+
 /*MEDIA QUERY*/
 
 @media (min-width : 720px) {
-	#nav a {
-		font-size: 1rem;
+	.nav {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0,0,0, .7);
+		font-family: var(--mainFont);
+		height: 0px;
+		overflow: hidden;
+		opacity: 0;
+		transition:0.5s;
+	}
+	.nav.is-active {
+		height: 380px;
+		opacity: 1;
+	}
+	.nav a {
+		font-size: 2rem;
+		height: 70px;
 	}
 	#about-me-wrapper {
 		width: 60vw;
@@ -295,7 +507,7 @@ hr {
 	.portfolio-box p {
 		margin: 50px auto;
 	}
-	#footer {
+	footer {
 		font-size: 1.2rem;
 	}
 	#about-me-wrapper img {
@@ -304,19 +516,36 @@ hr {
 }
 
 @media (min-width : 1024px) {
+	#hambi-menu {
+		display: none;
+	}
+	.nav {
+		flex-direction: row;
+		justify-content: space-around;
+		height: 40px;
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		opacity: 1;
+		overflow: auto;
+	}
+	.nav.is-active {
+		height: 40px;
+		opacity: 1;
+	}
 	#welcome h1 {
 		font-size: 2.5rem;
 	}
-	button {
+	.welcome-down-btn {
 		height: 70px;
 		width: 70px;
 	}
 	#header {
 		font-size: 2rem;
 	}
-	#nav a {
+	.nav a {
 		font-size: 1.5rem;
-		padding-top: 7px;
+		height: auto;
 	}
 	#about-me-wrapper {
 		padding: 20px;
@@ -374,11 +603,10 @@ hr {
 	#about-me-wrapper p {
 		margin-bottom: 50px;
 	}
-	#footer {
+	footer {
 		margin-top: 100px;
 	}
 	.portfolio-box figcaption {
 		font-size: 1.2rem;
 	}
 }
-

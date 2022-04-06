@@ -4,13 +4,33 @@ $(document).ready(function() {
 	
 	const PROJECTSDATA = DATA;
 
+	/*SETTINGS*/
+
+	$('.settings-text').click(function() {
+		$('.settings').toggleClass('open-settings');
+	})
+
+	/*WELCOME TEXT*/
+
+	setWelcomeText();
+
 	/*HIDE WELCOME*/
 
 	$('button').click(function() {
 		$('#welcome-background').slideUp();
 		$('#welcome').hide();
 		$('button').hide();
+		$('#about-me-wrapper').addClass('slide-in-left')
 	}); 
+
+	/*HAMBURGER MENU*/
+
+	// $(document).ready(function(){
+		$('#hambi-menu').click(function(){
+			$(this).toggleClass('open');
+			$('nav').toggleClass('is-active');
+		});
+	// });
 	
 	/*DATE IN FOOTER*/
 	
@@ -102,4 +122,22 @@ function buildElements(PROJECTSDATA) {
 				break;
 		}
 	});
+}
+
+/*
+*TODO ANIMATION
+*/
+
+function setWelcomeText() {
+	const welcomeText = 'Welcome'.split('');
+	const welcomeMsg = 'Take a look on my portfolio'.split('');
+	const welcomeFirstH1 = $('#welcome h1:nth-child(1)');
+	const welcomeSecondH1 = $('#welcome h1:nth-child(2)');
+
+	welcomeText.forEach( e => {
+		welcomeFirstH1.append(`<span class="bounce-char">${e}</span>`)
+	})
+	welcomeMsg.forEach( e => {
+		welcomeSecondH1.append(`<span class="bounce-char">${e}</span>`)
+	})
 }

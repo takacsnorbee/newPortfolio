@@ -19,20 +19,37 @@
 	</head>
 	
 	<body>
-		<div id="welcome-background"></div>
-		<div id="welcome">
-			<h1>Welcome</h1>
-			<h1>Take a look on my portfolio</h1>
+		<div class="settings">
+			<span class="settings-text">Settings</span>
+			<hr>
+			<span class="settings-btn">
+				<input type="checkbox">
+			</span>
+			<span class="settings-btn">
+				<input type="checkbox">
+			</span>
 		</div>
-		<button><i class="fas fa-caret-down"></i></button>
+		<div id="welcome-background">
+			<span class="vertical-span">Scroll<i class="fas fa-caret-down"></i></span>
+		</div>
+		<div id="welcome">
+			<h1></h1>
+			<h1></h1>
+		</div>
+		<button class="welcome-down-btn"><i class="fas fa-caret-down"></i></button>
 		<header id="header">
+			<time id="header-time"></time>
 			<audio id="audio" controls>
 				<source src="static/ukulele.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
 			</audio>
-			<time id="header-time"></time>
+			<div id="hambi-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</header>
-		<nav id="nav">
+		<nav class="nav">
 			<a href="#" target="_self">Home</a>
 			<a href="#about-me">About me</a>
 			<a href="#js-box">My projects</a>
@@ -40,6 +57,7 @@
 			<a href="#cb-box">Codeberry</a>
 		</nav>
 		<main id="about-me">
+			<span class="vertical-span">Scroll<i class="fas fa-caret-down"></i></span>
 			<div id="about-me-wrapper">
 				<h2>Takács Norbert</h2>
 				<h3>Software developer</h3>
@@ -58,28 +76,28 @@
 				</ul>
 			</div>
 		</main>
-		<hr>
 		<div id="portfolio-box-wrapper">
 			<div class="portfolio-box" id="js-box">
-				<p>Few projects what I made:</p>
+				<p>Few projects what I made</p>
 			</div>
 			<div class="portfolio-box" id="fcc-box">
-				<p>freeCodeCamp projects:</p>
+				<p>freeCodeCamp projects</p>
 			</div>
 			<div class="portfolio-box" id="cb-box">
-				<p>I have made these projects while I was learning at Codeberry:</p>
+				<p>I have made these projects while I was learning at Codeberry</p>
 			</div>
 			<div class="portfolio-box" id="webler-box">
-				<p>Java projects:</p>
+				<p>Java projects</p>
 			</div>
 			<div class="portfolio-box" id="vue-box">
-				<p>Vue projects:</p>
+				<p>Vue projects</p>
 			</div>
 			<div class="portfolio-box" id="chrome-box">
-				<p>Chrome extension:</p>
+				<p>Chrome extension</p>
 			</div>
 		</div>
-		<footer id="footer">
+		<footer>
+			<a class="up-btn" href="#about-me"><i class="fas fa-caret-up"></i></a>
 			<small>Portfolio &copy;<small>2019 - </small><small id="year"></small></small>
 			<small>Made by Norbert Takács</small>
 		</footer>

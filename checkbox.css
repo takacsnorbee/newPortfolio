@@ -1,0 +1,75 @@
+.settings-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.settings-btn input {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    appearance: none;
+    outline: none;
+    background: linear-gradient(0deg, #333, #000);
+    border-radius: 20px;
+    box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, 
+        inset 0 0 10px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,0.5),  inset 0 0 15px rgba(0,0,0,0.2);
+}
+
+.settings-btn input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(0deg, #000, #6b6b6b);
+    transform: scale(0.98, 0.96);
+    box-shadow: 0 0 0 1px #232323;
+    transition: 0.7s;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.settings-btn input:checked::before {
+    left: 40px;
+}
+
+/*LABELS*/
+
+.settings-btn:nth-child(3)::before,
+.settings-btn:nth-child(3)::after,
+.settings-btn:nth-child(4)::before,
+.settings-btn:nth-child(4)::after {
+    position: absolute;
+    z-index: 1;
+    cursor: default;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-btn:nth-child(3)::before {
+    content: 'en';
+    left: 20px;
+}
+
+.settings-btn:nth-child(3)::after {
+    content: 'hu';
+    right: 20px;
+}
+
+.settings-btn:nth-child(4)::before {
+    content: 'on';
+    left: 20px;
+}
+
+.settings-btn:nth-child(4)::after {
+    content: 'off';
+    right: 20px;
+}
+

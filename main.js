@@ -21,13 +21,20 @@ $(document).ready(function() {
 
 	/*HAMBURGER MENU*/
 
-	// $(document).ready(function(){
-		$('#hambi-menu').click(function(){
-			$(this).toggleClass('open');
-			$('nav').toggleClass('is-active');
-		});
-	// });
+	$('#hambi-menu').click(function(e){
+		e.stopPropagation();
+		$(this).toggleClass('open');
+		$('nav').toggleClass('is-active');
+	});
 	
+	$(document).click( e => {
+		let hambi = $('#hambi-menu');
+		if ( e.target !== hambi) {
+			$('#hambi-menu').removeClass('open');
+			$('nav').removeClass('is-active');
+		}
+	})
+
 	/*DATE IN FOOTER*/
 	
 	const YEARNOW = new Date().getFullYear();

@@ -141,6 +141,27 @@ body {
 
 /*NAV*/
 
+.nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0,0,0, .7);
+	font-family: var(--mainFont);
+	height: 0px;
+	overflow: hidden;
+	opacity: 0;
+	transition:0.5s;
+}
+.nav.is-active {
+	height: 380px;
+	opacity: 1;
+}
+.nav a {
+	font-size: 2rem;
+	height: 70px;
+}
+
 #about-me-wrapper ul, footer {
 	height: 30px;
 	display: flex;
@@ -480,26 +501,6 @@ footer {
 /*MEDIA QUERY*/
 
 @media (min-width : 720px) {
-	.nav {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		background-color: rgba(0,0,0, .7);
-		font-family: var(--mainFont);
-		height: 0px;
-		overflow: hidden;
-		opacity: 0;
-		transition:0.5s;
-	}
-	.nav.is-active {
-		height: 380px;
-		opacity: 1;
-	}
-	.nav a {
-		font-size: 2rem;
-		height: 70px;
-	}
 	#about-me-wrapper {
 		width: 60vw;
 		margin-top: 10vh;

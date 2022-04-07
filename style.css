@@ -22,7 +22,7 @@ body {
 .vertical-span {
 	writing-mode: vertical-lr;
 	position: absolute;
-	right: 10px;
+	right: 20px;
 	bottom: 10px;
 	color: white;
 	font-family: var(--mainFont);
@@ -148,7 +148,6 @@ body {
 	justify-content: space-around;
 	font-family: var(--mainFont);
 }
-
 
 .nav a {
 	text-decoration: none;
@@ -342,15 +341,16 @@ hr {
 	font-family: 'La Belle Aurore', cursive;
 	position: absolute;
 	left: -30px;
+	color: #515152;
 }
 
 .portfolio-box p::before {
-	content: '<p>';
+	content: attr(data-tag) '<p>';
 	top: -30px
 }
 
 .portfolio-box p::after {
-	content: '</p>';
+	content: attr(data-tag) '</p>';
 	bottom: -40px;
 }
 
@@ -597,7 +597,7 @@ footer {
 		width: 1000px;
 	}
 	#about-me-wrapper img {
-		width: 35pc;
+		width: 35px;
 		margin: 50px;
 	}
 	#about-me-wrapper p {

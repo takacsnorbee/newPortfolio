@@ -10,10 +10,6 @@ $(document).ready(function() {
 		$('.settings').toggleClass('open-settings');
 	})
 
-	/*WELCOME TEXT*/
-
-	setWelcomeText();
-
 	/*HIDE WELCOME*/
 
 	$('button').click(function() {
@@ -71,8 +67,98 @@ $(document).ready(function() {
 	/* BUILD PROJECTS */
 
 	buildElements(PROJECTSDATA);
+
+	/* DARK MODE & LANGUAGE */
+
+	$('#dark-checkbox').change(
+		function(){
+			if ($(this).is(':checked')) {
+				$('body').css('background-color', '#1d1d1d');
+				$('.portfolio-box p').css('color', '#daf6ff');
+				$('footer').css('color', 'white');
+				localStorage.setItem("darkModeActive", true);
+			} else {
+				$('body').css('background-color', 'white');
+				$('.portfolio-box p').css('color', 'black');
+				$('footer').css('color', 'black');
+				localStorage.setItem("darkModeActive", false);
+			}
+		}
+	);
+
+	$('#lang-checkbox').change(
+		function(){
+			if ($(this).is(':checked')) {
+				setLangHun();
+				localStorage.setItem("isEnglish", false);
+			} else {
+				setLangEng();
+				localStorage.setItem("isEnglish", true);
+			}
+		}
+	);
+
+	let darkModeIsActive = JSON.parse(localStorage.getItem("darkModeActive"));
+	let englishModeIsAcitve = JSON.parse(localStorage.getItem("isEnglish"));
+
+	if(englishModeIsAcitve) {
+		$('#lang-checkbox').prop('checked', false);
+		setLangEng();
+	} else {
+		$('#lang-checkbox').prop('checked', true);
+		setLangHun();
+	}
+
+	if(darkModeIsActive) {
+		$('#dark-checkbox').prop('checked', true);
+		$('body').css('background-color', '#1d1d1d');
+		$('.portfolio-box p').css('color', '#daf6ff');
+		$('footer').css('color', 'white');
+	} else {
+		$('#dark-checkbox').prop('checked', false);
+		$('body').css('background-color', 'white');
+		$('.portfolio-box p').css('color', 'black');
+		$('footer').css('color', 'black');
+	}
 })
 
+function setLangHun() {
+	$('.settings-text').text('Beállítás');
+	$('.nav a:nth-child(1)').text('Kezdőoldal')
+	$('.nav a:nth-child(2)').text('Rólam')
+	$('.nav a:nth-child(3)').text('Projektjeim')
+	$('#welcome h1:nth-child(1)').text('Üdvözlöm')
+	$('#welcome h1:nth-child(2)').text('Tekintse meg a portfólióm')
+	$('#about-me-wrapper h2').text('Takács Norbert')
+	$('#about-me-wrapper h3:nth-child(2)').text('Szoftverfejlesztő')
+	$('#about-me-wrapper h3:nth-child(5)').text('Kapcsolat')
+	$('#js-box p:first-child').text('Pár projektem')
+	$('#fcc-box p:first-child').text('freeCodeCamp projektek')
+	$('#cb-box p:first-child').text('A Codeberry-nél készült projektek')
+	$('#webler-box p:first-child').text('Java projektek')
+	$('#vue-box p:first-child').text('Vue projektek')
+	$('#chrome-box p:first-child').text('Chrome kiegészítők')
+	$('.made').text('Készítette Takács Norbert')
+}
+
+function setLangEng() {
+	$('.settings-text').text('Settings');
+	$('.nav a:nth-child(1)').text('Home')
+	$('.nav a:nth-child(2)').text('About me')
+	$('.nav a:nth-child(3)').text('My projects')
+	$('#welcome h1:nth-child(1)').text('Welcome')
+	$('#welcome h1:nth-child(2)').text('Take a look on my portfolio')
+	$('#about-me-wrapper h2').text('Norbert Takacs');
+	$('#about-me-wrapper h3:nth-child(2)').text('Software developer');
+	$('#about-me-wrapper h3:nth-child(5)').text('Contact me')
+	$('#js-box p:first-child').text('Few projects what I made')
+	$('#fcc-box p:first-child').text('freeCodeCamp projects')
+	$('#cb-box p:first-child').text('I have made these projects while I was learning at Codeberry')
+	$('#webler-box p:first-child').text('Java projects')
+	$('#vue-box p:first-child').text('Vue projects')
+	$('#chrome-box p:first-child').text('Chrome extensions')
+	$('.made').text('Made by Norbert Takacs')
+}
 
 function buildElements(PROJECTSDATA) {
 	
@@ -122,22 +208,4 @@ function buildElements(PROJECTSDATA) {
 				break;
 		}
 	});
-}
-
-/*
-*TODO ANIMATION
-*/
-
-function setWelcomeText() {
-	const welcomeText = 'Welcome'.split('');
-	const welcomeMsg = 'Take a look on my portfolio'.split('');
-	const welcomeFirstH1 = $('#welcome h1:nth-child(1)');
-	const welcomeSecondH1 = $('#welcome h1:nth-child(2)');
-
-	welcomeText.forEach( e => {
-		welcomeFirstH1.append(`<span class="bounce-char">${e}</span>`)
-	})
-	welcomeMsg.forEach( e => {
-		welcomeSecondH1.append(`<span class="bounce-char">${e}</span>`)
-	})
 }

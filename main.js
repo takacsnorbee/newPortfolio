@@ -1,8 +1,7 @@
-import DATA from './projectData.js';
+import PROJECTSDATA from './projectData.js';
+import SKILLDATA from './skillData.js';
 
 $(document).ready(function() {
-	
-	const PROJECTSDATA = DATA;
 
 	/*SETTINGS*/
 
@@ -71,21 +70,46 @@ $(document).ready(function() {
 	const AUDIO = document.getElementById('audio');
 	AUDIO.volume = 0.1;
 
+	/* BUILD SKILLS */
+
+	buildSkills(SKILLDATA);
+
 	/* BUILD PROJECTS */
 
 	buildElements(PROJECTSDATA);
+
+	/* TAGCLOUD */
+
+	let skillCloud = [];
+	SKILLDATA.forEach( e => skillCloud.push(e.skillName));
+	TagCloud('#cloud-wrapper', skillCloud);
+
+	/* SLIDE */
+
+	$('#about-slide').change( function(e) {
+		
+		$('.chart-wrapper').css('width', e.target.value + '%');
+		
+		let val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+		$(this).css('background-image',
+		'-webkit-gradient(linear, left top, right top, '
+		+ 'color-stop(' + val + ', rgba(0,0,0, .7)), '
+		+ 'color-stop(' + val + ', #C5C5C5)'
+		+ ')'
+		);
+	})
 
 	/* DARK MODE & LANGUAGE */
 
 	$('#dark-checkbox').change(
 		function(){
 			if ($(this).is(':checked')) {
-				$('body').css('background-color', '#1d1d1d');
+				$('body, .chart-wrapper').css('background-color', '#1d1d1d');
 				$('.portfolio-box p').css('color', '#daf6ff');
 				$('footer').css('color', 'white');
 				localStorage.setItem("darkModeActive", true);
 			} else {
-				$('body').css('background-color', 'white');
+				$('body, .chart-wrapper').css('background-color', 'white');
 				$('.portfolio-box p').css('color', 'black');
 				$('footer').css('color', 'black');
 				localStorage.setItem("darkModeActive", false);
@@ -118,12 +142,12 @@ $(document).ready(function() {
 
 	if(darkModeIsActive) {
 		$('#dark-checkbox').prop('checked', true);
-		$('body').css('background-color', '#1d1d1d');
+		$('body, .chart-wrapper').css('background-color', '#1d1d1d');
 		$('.portfolio-box p').css('color', '#daf6ff');
 		$('footer').css('color', 'white');
 	} else {
 		$('#dark-checkbox').prop('checked', false);
-		$('body').css('background-color', 'white');
+		$('body, .chart-wrapper').css('background-color', 'white');
 		$('.portfolio-box p').css('color', 'black');
 		$('footer').css('color', 'black');
 	}
@@ -167,9 +191,9 @@ function setLangEng() {
 	$('.made').text('Made by Norbert Takacs')
 }
 
-function buildElements(PROJECTSDATA) {
+function buildElements(projects) {
 	
-	PROJECTSDATA.forEach( e => {
+	projects.forEach( e => {
 		let div = document.createElement('div');
 		let a = document.createElement('a');
 		let img = document.createElement('img');
@@ -214,5 +238,18 @@ function buildElements(PROJECTSDATA) {
 			default:
 				break;
 		}
+	});
+}
+
+function buildSkills(skills) {
+	let skillsWraper = $('.chart-wrapper');
+	skills.forEach( e => {
+		let bar = $('<div></div>');
+		let fill = $('<div></div>').text(e.skillName);
+		bar.addClass('skill-bar');
+		fill.addClass('skill-fill');
+		fill.css('width', e.proficiency + '%');
+		bar.append(fill);
+		skillsWraper.append(bar);
 	});
 }

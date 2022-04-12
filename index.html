@@ -15,6 +15,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Trade+Winds|ZCOOL+QingKe+HuangYou" 
 			rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="./TagCloud.min.js" defer></script>
 		<script src="main.js" type="module" defer></script>
 	</head>
 	
@@ -62,6 +63,7 @@
 				<h2>Norbert Takacs</h2>
 				<h3>Software developer</h3>
 				<img src="static/no-person-photo.jpg">
+				<div id="cloud-wrapper"></div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae justo risus. Suspendisse potenti. 
 					Phasellus purus elit, maximus non nunc vel, semper fermentum nibh. Nam a blandit dolor. 
 					In a iaculis quam. Phasellus facilisis accumsan metus. Nulla consequat ultricies lorem ut porttitor. 
@@ -74,6 +76,9 @@
 					<li><a href="https://www.linkedin.com/in/norbert-tak%C3%A1cs-305b01148/"><i class="fab fa-linkedin"></i></a></li>
 					<li><a href="https://github.com/takacsnorbee"><i class="fab fa-github-square"></i></a></li>
 				</ul>
+				<div class="chart-wrapper">
+				</div>
+				<input type="range" id="about-slide" value="0" min="0" max="100">
 			</div>
 		</main>
 		<div id="portfolio-box-wrapper">

@@ -78,12 +78,6 @@ $(document).ready(function() {
 
 	buildElements(PROJECTSDATA);
 
-	/* TAGCLOUD */
-
-	let skillCloud = [];
-	SKILLDATA.forEach( e => skillCloud.push(e.skillName));
-	TagCloud('#cloud-wrapper', skillCloud);
-
 	/* SLIDE */
 
 	$('#about-slide').change( function(e) {

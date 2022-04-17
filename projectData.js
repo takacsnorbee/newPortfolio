@@ -204,6 +204,13 @@ const PROJECTSDATA = [
         imgSrc: 'pic/tricky_btn.png',
         figcaptionText: 'Tricky Btn'
     },
+    {
+        sectionName: 'vue-box',
+        elementName: 'pokemon',
+        demoURL: 'https://github.com/takacsnorbee/pokemon_vue/',
+        imgSrc: 'pic/pokemon.png',
+        figcaptionText: 'Pokemon'
+    },
 ];
 
 export default PROJECTSDATA;

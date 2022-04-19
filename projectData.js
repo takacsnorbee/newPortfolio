@@ -65,13 +65,6 @@ const PROJECTSDATA = [
         figcaptionText: 'Wedding'
     },
     {
-        sectionName: 'cb-box',
-        elementName: 'wiki',
-        demoURL: 'https://github.com/takacsnorbee/wiki-page-copy',
-        imgSrc: 'pic/wiki.png',
-        figcaptionText: 'Wiki Copy'
-    },
-    {
         sectionName: 'fcc-box',
         elementName: 'tribute',
         demoURL: 'https://github.com/takacsnorbee/tribute-page-fcc',
@@ -193,7 +186,7 @@ const PROJECTSDATA = [
     {
         sectionName: 'js-box',
         elementName: 'toggle-button-v2',
-        demoURL: 'https://github.com/takacsnorbee/toggle_button_v1/',
+        demoURL: 'https://github.com/takacsnorbee/toggle_button_v2/',
         imgSrc: 'pic/toggle_button_v2.png',
         figcaptionText: 'Toggle Button V2'
     },

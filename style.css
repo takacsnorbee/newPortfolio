@@ -672,6 +672,7 @@ footer {
 	#about-me-wrapper img {
 		width: 35px;
 		margin: 50px;
+		min-width: 330px;
 	}
 	#about-me-wrapper p {
 		margin-bottom: 50px;

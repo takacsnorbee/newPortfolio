@@ -162,6 +162,7 @@ function setLangHun() {
 	$('#cb-box p:first-child').text('A Codeberry-nél készült projektek')
 	$('#webler-box p:first-child').text('Java projektek')
 	$('#vue-box p:first-child').text('Vue projektek')
+	$('#react-box p:first-child').text('React projektek')
 	$('#chrome-box p:first-child').text('Chrome kiegészítők')
 	$('.made').text('Készítette Takács Norbert')
 }
@@ -181,6 +182,7 @@ function setLangEng() {
 	$('#cb-box p:first-child').text('I have made these projects while I was learning at Codeberry')
 	$('#webler-box p:first-child').text('Java projects')
 	$('#vue-box p:first-child').text('Vue projects')
+	$('#react-box p:first-child').text('React projects')
 	$('#chrome-box p:first-child').text('Chrome extensions')
 	$('.made').text('Made by Norbert Takacs')
 }
@@ -211,6 +213,10 @@ function buildElements(projects) {
 				break;
 			case 'vue-box':
 				section = document.getElementById('vue-box');
+				section.appendChild(div);
+				break;
+			case 'react-box':
+				section = document.getElementById('react-box');
 				section.appendChild(div);
 				break;
 			case 'webler-box':

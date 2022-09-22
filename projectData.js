@@ -218,6 +218,13 @@ const PROJECTSDATA = [
         imgSrc: 'pic/artwork_pic_.png',
         figcaptionText: 'Artwork'
     },
+    {
+        sectionName: 'react-box',
+        elementName: 'movieHunter',
+        demoURL: 'https://github.com/takacsnorbee/movieHunter',
+        imgSrc: 'pic/movie_hunter.png',
+        figcaptionText: 'MovieHunter'
+    },
 ];
 
 export default PROJECTSDATA;

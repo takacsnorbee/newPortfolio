@@ -211,6 +211,13 @@ const PROJECTSDATA = [
         imgSrc: 'pic/pokemon_react.png',
         figcaptionText: 'Pokemon'
     },
+    {
+        sectionName: 'react-box',
+        elementName: 'artwork',
+        demoURL: 'https://github.com/takacsnorbee/artwork',
+        imgSrc: 'pic/artwork_pic_.png',
+        figcaptionText: 'Artwork'
+    },
 ];
 
 export default PROJECTSDATA;
